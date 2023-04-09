@@ -88,7 +88,30 @@
             </div>
         </div>
         <script>
-                 // our JavaScript will go here
+            const timerElement = document.getElementById("timer");
+            const timeInputElement = document.getElementById("time-input");
+
+            let timerInterval;
+            let time = 0;
+
+            function startTimer() {
+                console.log("starting timer");
+                time = timeInputElement.value;
+                if (time <= 0) {
+                    alert("Time must be more than 0!");
+                    return;
+                }
+                timerElement.innerHTML = time;
+                timerInterval = setInterval(updateTimer, 1000);
+            }
+            function updateTimer() {
+                time--;
+                timerElement.innerHTML = time;
+
+                if (time === 0) {
+                    clearInterval(timerInterval);
+                }
+            }
         </script>
 </body>
 
