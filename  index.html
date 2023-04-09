@@ -93,10 +93,15 @@
             const resetButton = document.getElementById("reset");
             const timerElement = document.getElementById("timer");
             const timeInputElement = document.getElementById("time-input");
-
+            let timerActive = false;
             let timerInterval;
             let time = 0;
 
+            if (timerActive) {
+                timerInterval = setInterval(updateTimer, 1000);
+                setButtons("running");
+                return;
+            }
             function startTimer() {
                 console.log("starting timer");
                 time = timeInputElement.value;
@@ -125,6 +130,7 @@
                 time = 0;
                 timeInputElement.value = "";
                 timerElement.innerHTML = time;
+                timerActive = false;
             }
             function setButtons(state) {
                 if (state === "clear") {
@@ -143,7 +149,7 @@
                     resetButton.disabled = false;
                 }
             }
-
+            timerActive = true;
         </script>
 </body>
 
