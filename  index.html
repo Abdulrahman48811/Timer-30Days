@@ -1,0 +1,95 @@
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: "Open Sans", "Helvetica Neue", sans-serif;
+        }
+
+        #container {
+            width: 350px;
+            margin: 50px auto;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        #timer {
+            font-size: 30px;
+            color: black;
+            font-weight: bold;
+        }
+
+        flex-row {
+            margin-top: 8px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            column-gap: 8px;
+        }
+
+        .flex-row button {
+            border-radius: 8px;
+            padding: 12px;
+            border: none;
+            color: white;
+            cursor: pointer;
+            flex: 1;
+        }
+
+        #time-input {
+            font-size: 30px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid gray;
+            width: 100%;
+        }
+
+        #start {
+            background-color: #4cbb17;
+        }
+
+        #start:disabled {
+            background-color: #4bbb1771;
+        }
+
+        #stop {
+            background-color: #ff5733;
+        }
+
+        #stop:disabled {
+            background-color: #ff583377
+        }
+
+        #reset {
+            background-color: orange;
+        }
+
+        #reset:disabled {
+            background-color: rgba(255 166, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container" class="center">
+        <div id="timer">
+            <div />
+
+            <div>
+                <input id="time-input" type="number" placeholder="Enter time in seconds" />
+            </div>
+
+            <div class="flex-row">
+                <button onclick="startTimer()" id="start"> Start</button>
+                <button onclick="stopTimer()" id="stop">Stop</button>
+                <button onclick="resetTimer()" id="reset">Reset</button></button>
+            </div>
+        </div>
+        <script>
+                 // our JavaScript will go here
+        </script>
+</body>
+
+</html>
